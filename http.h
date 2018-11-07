@@ -9,6 +9,7 @@
 #include <sstream>
 #include <iostream>
 #include <map>
+#include <functional>
 
 #define MAX_WRITE_HANDLES 1000
 
