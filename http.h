@@ -9,6 +9,7 @@
 #include <sstream>
 #include <iostream>
 #include <map>
+#include <functional>
 
 #define MAX_WRITE_HANDLES 1000
 
@@ -129,6 +130,7 @@ class HTTPEvents {
 
     HTTPEvents(Listener fn) {
       listener = fn;
+      http_parser_settings_init(&settings);
 
       static function<int(http_parser *parser)> on_message_complete;
       static function<int(http_parser *parser, const char *at, size_t len)> on_url;
